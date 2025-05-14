@@ -14,8 +14,8 @@ def about(request):
 
 
 def version(request):
-    content = 'Version 1.0.0'
-    response = JsonResponse({'version': content},
+    data = 'Version 1.0.0'
+    response = JsonResponse({'version': data},
                             content_type='application/json')
 
     return response
