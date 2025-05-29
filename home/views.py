@@ -1,5 +1,6 @@
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render
+from datetime import date, timedelta
 
 
 def credits(request):
@@ -29,4 +30,21 @@ def news(request):
                 "RiffMates has its first web page",
             ],
     }
-    return render(request, 'news.html', data)
+    return render(request, 'exercise_news2.html', data)
+
+
+def news_advanced(request):
+    today = date.today()
+    before1 = today - timedelta(days=1)
+    before2 = today - timedelta(days=2)
+    before3 = today - timedelta(days=3)
+
+    data = {
+        'news': [
+            ("RiffMates now has a news page!", today),
+            ("RiffMates has its first web page", before1),
+            ("RiffMates is now open source!", before2),
+            ("RiffMates has a new feature: user profiles!", before3),
+        ],
+    }
+    return render(request, 'news_adv.html', data)

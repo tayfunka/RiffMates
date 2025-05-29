@@ -1,0 +1,20 @@
+{% extends "exercise_base.html" %}
+
+{% block title %}
+    {{block.super}}: Advanced News
+{% endblock title %}
+
+{% block content %}
+    <h1 class="display-4">RiffMates News</h1>
+    <table>
+        {% for item in news %}
+        <tr style="background-color: {% cycle '#ddd' '#bbb' %}">
+            <td> {{ item.0 }} </td>
+            <td> {{ item.1|date }} </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+{% endblock content %}
+
+

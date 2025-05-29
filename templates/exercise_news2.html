@@ -1,0 +1,15 @@
+{% extends "exercise_base.html" %}
+
+{% block title %}
+  {{block.super}}: News
+{% endblock title %}
+
+{% block content %}
+    <h1 class="display-4">RiffMates News (2)</h1>
+    <ul>
+        {% for item in news %}
+        <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
+
+{% endblock content %}
