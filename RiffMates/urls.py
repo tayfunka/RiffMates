@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 from home import views as home_views
-
+from bands import views as bands_views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('credits/', home_views.credits, name='credits'),
@@ -10,4 +10,5 @@ urlpatterns = [
     path('version/', home_views.version, name='version'),
     path('news/', home_views.news, name='news'),
     path('news_adv/', home_views.news_advanced, name='news_adv'),
+    path('bands/', include('bands.urls')),
 ]

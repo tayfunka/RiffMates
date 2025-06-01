@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}
+    {{block.super}}
+{% endblock title %}
+
+{% block content %}
+
+    <h1>Musicians</h1>
+    <ul>
+        {% for musician in musicians %}
+            <li>
+                <a href="{% url 'musician' musician.id %}">{{ musician.first_name }} {{ musician.last_name }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+
+{% endblock content %}
